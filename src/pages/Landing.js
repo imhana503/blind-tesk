@@ -35,7 +35,7 @@ const Landing = () => {
                 <div className="btn-group">
                     <a href="https://jihana.tistory.com/68" className="btn kakao" target="_blank" rel="noopener noreferrer">카카오 로그인</a>
                     <a href="https://jihana.tistory.com/68" className="btn apple" target="_blank" rel="noopener noreferrer">애플 로그인</a>
-                    <Link to={'/join'} className="btn primary">회원 가입</Link>
+                    <Link to={'/login'} className="btn primary">로그인</Link>
                 </div>
                 <BottomArea>
                     <Link to={'/home'} className="btn text">회원가입 없이 둘러보기</Link>
