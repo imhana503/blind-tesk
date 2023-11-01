@@ -1,7 +1,7 @@
 import React, { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const LandingWrap = styled.section`
+const SectionIntro = styled.section`
     display:flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -10,38 +10,37 @@ const LandingWrap = styled.section`
     padding:1rem;
 `;
 
-const LogonArea = styled.div`
-    position:absolute;
-    top:50%;
-    left:0;
-    transform:translateY(-50%);
+const IntroItem = styled.div`
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:100vh;
+    margin:-5rem 0;
 `;
 
-const BottomArea = styled.div`
+const IntroBottom = styled.div`
     display: flex;
     margin-top:3rem;
     justify-content: end;
 `;
 
 const Landing = () => {
-    const env = process.env;
-  env.PUBLIC_URL = env.PUBLIC_URL || '';
+
     return(
-        <LandingWrap>
-            <LogonArea>
-                <image src={process.env.PUBLIC_URL+'/assets/logo192.png'}/>
-            </LogonArea>
-            <div>
-                <div className="btn-group">
-                    <a href="https://jihana.tistory.com/68" className="btn kakao" target="_blank" rel="noopener noreferrer">카카오 로그인</a>
-                    <a href="https://jihana.tistory.com/68" className="btn apple" target="_blank" rel="noopener noreferrer">애플 로그인</a>
-                    <Link to={'/login'} className="btn primary">로그인</Link>
+        <SectionIntro className="section">
+            <IntroItem>
+                <div className="tit-wrap">
+                    <h1 className="tit-page"><span class="txt">OO서비스에 가입하세요 쇼핑의 어려움을 해소해드려요</span></h1>
                 </div>
-                <BottomArea>
-                    <Link to={'/home'} className="btn text">회원가입 없이 둘러보기</Link>
-                </BottomArea>
-            </div>
-        </LandingWrap>
+                <div className="btn-group">
+                    <Link className="btn primary">시각 지원이 필요해요</Link>
+                    <Link className="btn secondary">자원봉사자로 참여할게요</Link>
+                </div>
+            </IntroItem>
+            <IntroBottom>
+                <p className="text">지금 회원가입하시면 쇼핑 상담 5회 이용권을 제공해 드립니다.</p>
+            </IntroBottom>
+        </SectionIntro>
     )
 }
 

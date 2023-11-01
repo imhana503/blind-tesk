@@ -11,7 +11,7 @@ const LeftArea = styled.div`
     border:1px solid red
 `
 
-const centerArea = styled.div`
+const CenterArea = styled.div`
     border:1px solid red
 `
 
@@ -19,12 +19,12 @@ const RightArea = styled.div`
     border:1px solid red
 `
 
-const Header = ({text}) => {
+const Header = ({ leftArea, centerArea, rightArea }) => {
     return(
         <HeaderWrap>
-            <LeftArea>left</LeftArea>
-            <centerArea>${text}</centerArea>
-            <RightArea>right</RightArea>
+            <LeftArea>{leftArea}</LeftArea>
+            <CenterArea>{centerArea}</CenterArea>
+            <RightArea>{rightArea}</RightArea>
         </HeaderWrap>
     )
 }
