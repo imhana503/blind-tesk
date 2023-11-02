@@ -1,7 +1,8 @@
 import React, { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const SectionIntro = styled.section`
+
+const LandingWrap = styled.section`
     display:flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -10,37 +11,42 @@ const SectionIntro = styled.section`
     padding:1rem;
 `;
 
-const IntroItem = styled.div`
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
+const LogonArea = styled.div`
+    width:100vw
     height:100vh;
-    margin:-5rem 0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    img {
+        width:13rem;
+        height:10rem;
+    }
 `;
 
-const IntroBottom = styled.div`
+const BottomArea = styled.div`
     display: flex;
     margin-top:3rem;
     justify-content: end;
 `;
 
-const Landing = () => {
 
+
+const Landing = () => {
+    
     return(
-        <SectionIntro className="section">
-            <IntroItem>
-                <div className="tit-wrap">
-                    <h1 className="tit-page"><span class="txt">OO서비스에 가입하세요 쇼핑의 어려움을 해소해드려요</span></h1>
-                </div>
-                <div className="btn-group">
-                    <Link className="btn primary">시각 지원이 필요해요</Link>
-                    <Link className="btn secondary">자원봉사자로 참여할게요</Link>
-                </div>
-            </IntroItem>
-            <IntroBottom>
-                <p className="text">지금 회원가입하시면 쇼핑 상담 5회 이용권을 제공해 드립니다.</p>
-            </IntroBottom>
-        </SectionIntro>
+        <LandingWrap>
+            <LogonArea><img src={'/assets/sorimarket-logo.webp'} alt="소리마켓"/></LogonArea>
+            <div className="btn-group">
+                <a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Faccounts.kakao.com%2Fweblogin%2Faccount#login" className="btn kakao" target="_blank" rel="noopener noreferrer">카카오 로그인</a>
+                <a href="https://appleid.apple.com/sign-in" className="btn apple" target="_blank" rel="noopener noreferrer">애플 로그인</a>
+                <Link to={'/login'} className="btn primary">로그인</Link>
+            </div>
+            <BottomArea>
+                <Link to={'/home'} className="btn text">회원가입 없이 둘러보기</Link>
+            </BottomArea>
+           
+        </LandingWrap>
     )
 }
 

@@ -13,16 +13,16 @@
 
 
 :root{
-  --color-bg:#1f1f38;
+  --color-bg:#c3c3ff;
   --color-gray:#4f4f4f;
   --color-primary:#1947f9;
   --color-yellow:yellow;
   --color-white:#fff;
   --color-black:#000;
 
+
   --font-normal:400;
   --font-bold:700;
-
   --transtion:all 400ms ease;
 
   --container-width-lg:75%;
@@ -38,10 +38,10 @@ html{
 
 body {
   font-family: 'Nanum Gothic',sans-serif;
-  background-color: var(--color-white);
   color:var(--color-black);
   font-size:1.4rem;
   line-height:1.5;
+  background:var(--color-gray)
 }  
 
 em{
@@ -60,6 +60,7 @@ select::-ms-expand {
 
 input[type='text'],
 input[type='email'],
+input[type='password'],
 textarea {
   width:100%;
   padding:.8rem;
@@ -71,6 +72,16 @@ img {
   max-width: 100%;
   height:auto;
 }
+
+@media (max-width: 7680px){
+  #wrap{
+    max-width: 600px;
+    height:100vh;
+    margin:0 auto;
+    background:var(--color-white)
+  }
+}
+
 
 /* layout */
 
@@ -148,24 +159,27 @@ img {
   padding:5rem 0;
 }
 
-
-.section {
-  padding:0 2rem;
+header .ico-home {
+  font-size:3rem;
 }
-/* btn */
-.btn {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding:1rem; 
-  border-radius: 2rem;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-} 
 
-.btn-group {
-  display:flex;  
-  flex-direction: column;
+/* FORM */
+.form-wrap {
+  padding:2rem;
+}
+.input-box .input-name {
+  padding:.2rem 0;
+  font-size:1.5rem;
+}
+
+.input-box+.input-box{
+  margin-top:2rem;
+}
+
+.input-button {
+  margin-top:2.5rem;
+}
+
+input[type="checkbox"] {
+  border:1px solid red;  
 }

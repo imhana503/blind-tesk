@@ -1,30 +1,40 @@
-import React, { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderWrap = styled.header`
     display:flex;
     justify-content: space-between;
     align-items: center;
+    height:5rem;
+    position:sticky;
+    padding:0 2rem;
 `;
 
 const LeftArea = styled.div`
-    border:1px solid red
+  
 `
 
 const CenterArea = styled.div`
-    border:1px solid red
+    position:absolute;
+    top:50%;
+    left:50%;  
+    transform:translate(-50%, -50%);
+    font-weight:var(--font-bold);
+    font-size:2rem;
 `
 
 const RightArea = styled.div`
     border:1px solid red
 `
 
-const Header = ({ leftArea, centerArea, rightArea }) => {
+const Header = ({ leftArea, centerArea, rightArea }) => 
+{
     return(
         <HeaderWrap>
             <LeftArea>{leftArea}</LeftArea>
             <CenterArea>{centerArea}</CenterArea>
-            <RightArea>{rightArea}</RightArea>
+            {
+                rightArea && <RightArea>{rightArea}</RightArea>
+            }
         </HeaderWrap>
     )
 }
