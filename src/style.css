@@ -76,7 +76,7 @@ img {
 @media (max-width: 7680px){
   #wrap{
     max-width: 600px;
-    height:100vh;
+    height: min-content;
     margin:0 auto;
     background:var(--color-white)
   }

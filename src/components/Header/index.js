@@ -6,6 +6,7 @@ const HeaderWrap = styled.header`
     align-items: center;
     height:5rem;
     position:sticky;
+    top:0;
     padding:0 2rem;
 `;
 
