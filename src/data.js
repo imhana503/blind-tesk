@@ -8,7 +8,7 @@ export const Products = [
         price:'358200',
         deliveryCharge:true,
         delivery:'배송비 무료',
-        rating:'5',
+        rating:'1',
         thumb:urls+'img-product01.jpg',
     },
     {
@@ -17,7 +17,7 @@ export const Products = [
         price:'2250000',       
         deliveryCharge:false,
         delivery:'배송비 착불',
-        rating:'4',
+        rating:'2',
         thumb:urls+'img-product02.jpg',
     },
     {
@@ -44,7 +44,7 @@ export const Products = [
         price:'22640',
         deliveryCharge:true,
         delivery:'배송비 무료',
-        rating:'1',
+        rating:'5',
         thumb:urls+'img-product05.jpg',
     },
 ]

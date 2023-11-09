@@ -59,41 +59,38 @@ const Rating = styled.span`
         margin-right:.3rem;
         vertical-align:middle;
     }
-`
+`;
+
+const TabBtns = ({ text, value, onClick }) => {    
+    return(
+        <button type="button" value={value} onClick={(e)=>onClick( e.target.value )}>{text}</button>
+    );
+};
 
 
 const Product = () => {
     const navigate = useNavigate();
-    const [isActive, setIsActive] = useState(false);
-    const [filter, setFilter] = useState('rating');
+    const [value, setValue] = useState('rating');
 
-    const onFillterClick = useCallback((e) => {
-        // console.log( e.target.getAttribute('data-type') == "rating" ); 
+    const getProducts = () => {
+        const compare = (a,b) => {
+            if( value === 'rating' ){
+                console.log('true')
+                return parseInt(b.date) - parseInt(a.date);
+            } 
+        }
+
+        const copyList = JSON.parse(JSON.stringify(Products));
+        const sortedList = copyList.sort(compare);
+        console.log(sortedList);
+        return sortedList;
 
        
-        // const getSortList = () => {
-        //    const copyList = JSON.parse(JSON.stringify(Products));
-        //    copyList.map((item, id)=>{
-        //     item.rating.sort((a,b)=> console.log(b-a))
-        //    })
-          
-        // }
-  
-        // if( e.target.getAttribute('data-type') == "rating" ){
-        //     console.log('true');
-        //     getSortList();
-            
-        // }
+    }
 
+    getProducts();
 
-        
-
-        
-       
-    },[filter])
-    
-
-    
+   
 
     return(
         <>
@@ -103,9 +100,9 @@ const Product = () => {
                 rightArea={false}
             />
             <section>
-                <button type="button" onClick={onFillterClick} data-type="rating" data-active={true}>높은 별점</button>
-                <button type="button" onClick={onFillterClick} data-type="price" data-active={false}>낮은 가격</button>
-                <button type="button" onClick={onFillterClick} data-type="delivery" data-active={false}>무료 배송</button>
+                <TabBtns text={'높은 별점'} value={'rating'} onClick={setValue} />
+                <TabBtns text={'낮은 가격'} value={'price'} onClick={setValue}/>
+                <TabBtns text={'무료 배송'} value={'delivery'} onClick={setValue}/>
             </section>
             <section>
                 <ProductList data-element="tabs">
